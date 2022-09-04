@@ -6,4 +6,4 @@ var res = Adder.AddOnlyPrimeNumbersPlinq(array);
 
 Console.WriteLine(res);
 
-
+Console.ReadLine();

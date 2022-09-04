@@ -24,10 +24,10 @@ internal static class Adder
         
         
         total =  array.AsParallel().Aggregate(
-            0,
+            0l,
             (acc, item) => isPrime(item) ? acc += item : acc);
         
-        /*
+        
         Parallel.For(
             0, arrayLen,
             () => 0,
@@ -37,7 +37,7 @@ internal static class Adder
                 return isPrime(arrayValue) ? threadLocalStorageValue += arrayValue : threadLocalStorageValue;
             },
             value => Interlocked.Add(ref total, value));
-        */  
+        
 
         return total;
     }

@@ -2,7 +2,7 @@
 
 internal static class ArrayCreator
 {
-    public static async Task<int[]> Create(int arrayLen = 10)
+    public static async Task<int[]> Create(int arrayLen = 1000000)
     {
         var taskAmout = GetTaskAmount();
         var partitionSize = (int) arrayLen / taskAmout;
@@ -37,7 +37,7 @@ internal static class ArrayCreator
         return partition;
     }
 
-    private static int GetRandomValue() => 7; //new Random().Next();
+    private static int GetRandomValue() => new Random().Next();
 
     private static int GetTaskAmount() => ((int)Math.Log2(Environment.ProcessorCount)) + 4;
 }
