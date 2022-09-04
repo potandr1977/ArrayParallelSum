@@ -2,7 +2,9 @@
 
 internal static class ArrayCreator
 {
-    public static async Task<int[]> Create(int arrayLen = 1000000)
+    private const int tenMillions = 10000000;
+
+    public static async Task<int[]> Create(int arrayLen = tenMillions)
     {
         var taskAmout = GetTaskAmount();
         var partitionSize = (int) arrayLen / taskAmout;

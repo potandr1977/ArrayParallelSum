@@ -2,8 +2,10 @@
 
 var array = await ArrayCreator.Create();
 
-var res = Adder.AddOnlyPrimeNumbersPlinq(array);
-
-Console.WriteLine(res);
+Adder.Sum(array, Adder.SumParallel, nameof(Adder.SumParallel));
+Adder.Sum(array, Adder.SumPlinq, nameof(Adder.SumPlinq));
+Adder.Sum(array, Adder.SumSerial, nameof(Adder.SumSerial));
 
 Console.ReadLine();
+
+
